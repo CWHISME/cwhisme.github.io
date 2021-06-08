@@ -1,12 +1,15 @@
 var limitImgContext = function () {
-    var img = $("img");
-    img.on("contextmenu", function (e) {
-        $("body").dblclick();
-        return false;
-    });
-    img.on("dragstart", function () { return false; });
+    var imgList = document.getElementsByTagName("img");
+    for (var i = 0; i < imgList.length; i++) {
+        img = imgList[i];
+        img.oncontextmenu = (function (e) {
+            document.getElementsByTagName("body")[0].click();
+            return false;
+        });
+        img.ondragstart=( function () { return false; });
+    }
 }
 
-$(document).ready(function () {
+window.onload=(function () {
     limitImgContext();
 });
