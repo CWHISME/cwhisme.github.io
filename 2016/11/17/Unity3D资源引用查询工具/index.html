@@ -54,6 +54,7 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CWHISME/CWHISME.github.io@master/js/DateTimeAfeterCalc.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CWHISME/CWHISME.github.io@master/js/particles-bg.js"></script>
     
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/animejs@latest"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CWHISME/CWHISME.github.io@master/js/script.js"></script>
 
     <!-- Custom Fonts -->
@@ -82,8 +83,9 @@
 <body>
 
 
-<canvas id="hackEffectCanvas" style="position:fixed;z-index:-1"></canvas>
+<canvas id="hackEffectCanvas" style="position:fixed;z-index:-1;pointer-events: none"></canvas>
 
+<canvas class="fireworks" style="position:fixed;z-index:10;pointer-events: none"></canvas>
 
 <!-- Main Content -->
 <!-- Banner -->
@@ -140,7 +142,7 @@
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">Unity3D资源引用查询工具</h1>
             <p class="f4 fw3 pab-100px tc tc-m tl-ns">
-				<!--小于三级路径，或者本身没有内容，表示可能是根目录那几个页面，则不做标题的额外显示的处理-->
+				<!--小于三级路径，或者本身没有内容，或者为page页面，表示可能是根目录那几个页面，则不做标题的额外显示的处理-->
 								
                     <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 
                     2016-11-17&nbsp&nbsp

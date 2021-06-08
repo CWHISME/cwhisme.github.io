@@ -2,9 +2,9 @@ $(document).ready(function () {
     var open = 0;
     var display = false;
     var saveInterval;
-    $(document).dblclick(function () {
+    $(document).click(function () {
         open++;
-        if (open < 6 || display) return;
+        if (open < 9 || display) return;
         //Ч��
         //hacker effect
         clearInterval(saveInterval);

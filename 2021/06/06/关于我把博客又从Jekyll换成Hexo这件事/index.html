@@ -54,6 +54,7 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CWHISME/CWHISME.github.io@master/js/DateTimeAfeterCalc.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CWHISME/CWHISME.github.io@master/js/particles-bg.js"></script>
     
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/animejs@latest"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CWHISME/CWHISME.github.io@master/js/script.js"></script>
 
     <!-- Custom Fonts -->
@@ -82,8 +83,9 @@
 <body>
 
 
-<canvas id="hackEffectCanvas" style="position:fixed;z-index:-1"></canvas>
+<canvas id="hackEffectCanvas" style="position:fixed;z-index:-1;pointer-events: none"></canvas>
 
+<canvas class="fireworks" style="position:fixed;z-index:10;pointer-events: none"></canvas>
 
 <!-- Main Content -->
 <!-- Banner -->
@@ -140,7 +142,7 @@
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">关于我把博客又从Jekyll换成Hexo这件事</h1>
             <p class="f4 fw3 pab-100px tc tc-m tl-ns">
-				<!--小于三级路径，或者本身没有内容，表示可能是根目录那几个页面，则不做标题的额外显示的处理-->
+				<!--小于三级路径，或者本身没有内容，或者为page页面，表示可能是根目录那几个页面，则不做标题的额外显示的处理-->
 								
                     <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 
                     2021-06-06&nbsp&nbsp
@@ -190,6 +192,9 @@
 <p>其中在处理JsDeliver加速图片方面开始有点捉鸡，不过后面也解决了。</p>
 <p>主要因为是 Jekyll 使用的模板语言是 Liquid，Hexo是 ejs，所以挪过来在统一替换图片地址方面开始有点找不到方法。<br>不过查了下 ejs 实际上就是用 js 语法，然后就注意找了下文章内容的解析位置，后面定位到 post 模板，在其中 page.content 字段处，使用以下代码进行替换解决的。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%- page.content.replaceAll(&quot;blogimages&quot;,(theme.cdn.path==null?&quot;&quot;:theme.cdn.path)+&quot;blogimages&quot;) %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>后边还增加了点击烟花效果，出处为：<a target="_blank" rel="noopener" href="https://codepen.io/juliangarnier/pen/gmOwJX">Anime.js Fireworks canvas demo</a></p>
+<p>是从<a target="_blank" rel="noopener" href="https://yun.yunyoujun.cn/guide/config.html#%E7%83%9F%E8%8A%B1">云游君</a>的Hexo主题介绍处看过来的，因为开始其实还想用用那个主题来着。</p>
 <hr>
 <p>最后，我摊牌：其实Jakyll也是可以直接上传本地编译后静态内容上去的，虽然部分语法就不能使用了，不过也可以实现这种 “非公共的项目存储源文件”，仅发布编译后内容的。</p>
 <p>我就是馋原来这个Hexo主题 ╮(￣▽￣)╭</p>

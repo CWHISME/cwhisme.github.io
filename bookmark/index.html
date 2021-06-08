@@ -49,6 +49,12 @@
 	<!-- My JS -->
     <!--一级页面不进行额外处理的引用-->
     
+    <!-- jquery -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CWHISME/CWHISME.github.io@master/js/DateTimeAfeterCalc.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CWHISME/CWHISME.github.io@master/js/particles-bg.js"></script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/animejs@latest"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CWHISME/CWHISME.github.io@master/js/script.js"></script>
 
     <!-- Custom Fonts -->
@@ -77,6 +83,7 @@
 <body>
 
 
+<canvas class="fireworks" style="position:fixed;z-index:10;pointer-events: none"></canvas>
 
 <!-- Main Content -->
 <!-- Check if it is a root tag or category page -->
@@ -136,7 +143,7 @@
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">Bookmarks</h1>
             <p class="f4 fw3 pab-100px tc tc-m tl-ns">
-				<!--小于三级路径，或者本身没有内容，表示可能是根目录那几个页面，则不做标题的额外显示的处理-->
+				<!--小于三级路径，或者本身没有内容，或者为page页面，表示可能是根目录那几个页面，则不做标题的额外显示的处理-->
 				
 				    2021-01-08
 				
