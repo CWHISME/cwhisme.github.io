@@ -12,8 +12,6 @@ var limitImgContext = function () {
 }
 
 var fireworksEffect = function () {
-    window.human = false;
-
     var canvasEl = document.querySelector('.fireworks');
     var ctx = canvasEl.getContext('2d');
     var numberOfParticules = 30;
@@ -126,7 +124,6 @@ var fireworksEffect = function () {
     });
 
     document.addEventListener(tap, function (e) {
-        window.human = true;
         render.play();
         updateCoords(e);
         animateParticules(pointerX, pointerY);
